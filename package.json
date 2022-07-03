@@ -1,0 +1,24 @@
+{
+  "name": "vehicle-manufacture-iot-extension",
+  "version": "1.1.3",
+  "description": "The lifecycle of a vehicle using Hyperledger Fabric",
+  "main": "index.js",
+  "dependencies": {
+    "license-check-and-add": "3.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "licchkadd": "license-check-and-add check -f license-check-config.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awjh-ibm/vehicle-manufacture-iot-extension.git"
+  },
+  "author": "IBM",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/awjh-ibm/vehicle-manufacture-iot-extension/issues"
+  },
+  "homepage": "https://github.com/awjh-ibm/vehicle-manufacture-iot-extension#readme"
+}

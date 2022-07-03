@@ -1,0 +1,27 @@
+dist: xenial
+services:
+  - xvfb
+language: node_js
+node_js:
+- '8'
+services:
+- docker
+before_install:
+- "./.travis/before-install.sh"
+install:
+- "./.travis/install.sh"
+before_script:
+- "./.travis/before-script.sh"
+script:
+- "./.travis/script.sh"
+after_failure: tail -n +1 -- /home/travis/.npm/_logs/*-debug.log
+sudo: required
+branches:
+  only:
+  - master
+  - "/([0-9]+\\.){2}[0-9]+/"
+env:
+  global:
+  - secure: mkkRym3ovcUyV8UIYOOYAzu/c6vsS+6GFlBexI49yUTzNsu+MUkmmdFWiX/ZtRKqFA+l5kT9yAlyp0yt1GSEVlkNRGR/TvnFbtzj393RAY1V5LMcWKSKBctiRnDQRDjGESEk/+Iq1VHkwT6bslH3qZEtfQRNRFW65kRl43pJZdk4YmMsAd7WFZkm+Ugsvzs8JzKMshyUoYhdNsfEbZPCGIwowKKbg6oxiGBoFbZfqe4vooU878t+WG5ReThvAWYhBcDvVQ8BUGeC7LRypEZm+bezF+cGA6vxNO4Js9WzuVugrvSSDvZaAmHDUosKGGGtEgLiYtdLLQV0D+CoTgJ4CNrQIpARKdssq+qiC10FvYXgW5kpocEVdm2S5s4OPAlgcpaEavIAFCV7+AcqJTQO8+oSozCxblEVCYapsZ6NnpHjt0G/CXkmqPRPaGtntdfsbmJoc+dx2d0a/Q7tm8gIf8kT8R1/m87piZ1xTir2i4BP9R+XniiiXO2qPgiauJnB+AsuVh7j9rg9SKK9on5ksNolQVWGwse3LleeeZHZ/k5wq/HPkVUCQzlR10e8V/HJs+Po9BZuDhlfKPrvD1S4MeD+iC0XR69I2W8sB8IbymX+jXg/ZGZK8R20+lq7OOShDHBJJMJsmBtyVGWDmjr6cI10Lk01nCiHDLsLU6SArWA=
+  - secure: d4l1zjNI/o+XzBJvSdHTNAZtkFNs7DT6hoBczH8Cq3qD91ll1baNTNVNwxr5z3BSIXm75CZckShG9jynhUZBtAqqdg48vaMcRCyJZZQkxhDO156goaVKXwRBMtkW+/k6YrkcWdarAswJrnAxrybHBXJniqDTGZec+Lrp1kQFWxmy5Ng0BUmBk3wHPvS5vqIx2nmqTlOHrCOIUHdfFAkJMA03dMwasAhKx6fkqj0HcfmCGfNKvV8fBHOsxrVQVL4mT1LmT0QIh4/JtTR9xL6oAeOHyNhOFQFjK6NT2OWHyktNiI9ZdtUmn1I/X7lsrnZAS5cnTTL+esLI+KeJ5fRoZwDKhr9AqLQJKTUopsME26nQV9M4L6Xq+2/0CXHodYnQ6p774uu6oR1v0sxvUacgUTOctJ7WH0C3lJEO4UYvLfLl4f5RDhEYpc1JHdExcGIu/DDpNJNUJjt2ESczbUpVQA8yH4Z//9WW/YaXxCi0AJK43YCjg4kExNRsH1uLB7ikYauEJaZX+2J943tX0Q5S/6I6R3f5uoHjmShrrtAg1XlPmhLBZoWUs95HQdkIZN8XJS8JWTshr76yrP2Y16FyBN9amKMN3KqfQhSNIpyuXFgQTg5iiFBitzRXOGnRllgrkCLR+zsn3b1SKd/dthfXrIwQFE9lnhZqCTHefUSYyjg=
+  - secure: dRaqftG4Qtx/TPQd+8C8RskrKMrYv5y0slfhb64fPUiyJz8yebPAYmsBJDshmjyZB4LnpMhL4rGneUtBSVKKwvjmYCrdZj3gFlGC8hy1L7GAvmoPwUxYaHgf1eouHg7+2Oh2qxzPlWQeE31aNNZ1/pCBgPSVoVougwG8Gbc2F7hwhGMw8Py1sQb+h05uvLgBVqxn2MEqmVVZOVDVusM0kmF53ri9Mx5a++Opzr/EMzEvBFXpT+dUFJo6zNILqn4x40OcjusigjHMhe7esUPS+TgEE8HpfILO7VpncI7PfPMKIz8IqJHWLLhql8SxxjLDJpFtD4VNhNMmLR+zJCQbJIM3AMvTOA6kqPxuqpKiGBlP4Mil49CYTGBsZnEYaDKIZLckUVkMEgyagreHSUoKTXPQKLMnePphJVtqhjMXdrJizyJnw/kJujpdd6d7dgWyTZJ2G1EwPdCaoBOg4axSH3K5A0Y/mupXhaI+CsKARroZE/5VwTr0qwpJjEqj/5ZyFDK1DIghmpYLSZAK7G+hsIiyqv7lndZyryiQ8A/vVgnTViFriXCON5x9ovjHXjL7uamPMKhI4b4DF4ZCSnFnR+P9PAgfVUXPB1bZsKKhIzNadbnxJdYaVQxshNDfkvN2bO2fpdL6tDjHPCxMF31mdtnBwEgqYTQ+C1/k8giuIUA=
